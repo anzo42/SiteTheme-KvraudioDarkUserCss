@@ -1,0 +1,57 @@
+/* ==UserStyle==
+@name           kvraudio.com
+@namespace      github.com/openstyles/stylus
+@version        1.1.0
+@description    Dark style for KVR site
+@author         Frantick
+@preprocessor stylus
+
+@var color mainBackground "Main background" "#242424"
+@var color secondBackground "Second background" "#2C2C2C"
+@var color mainFontColor "Main font color" "#8AA68A"
+@var color mainLinkFontColor "Link main color" "#AFC8BF"
+@var color secondLinkFontColor "Link hover color" "#809D6E"
+ 
+==/UserStyle== */
+
+@-moz-document domain("kvraudio.com") {
+    :root
+    {
+        --backgroundColorMain: mainBackground;
+        --backgroundColorAlt: secondBackground;
+        --fontColorMain: mainFontColor;
+        --fontColorLinkMain: mainLinkFontColor;
+        --fontColorLinkAlt: secondLinkFontColor;
+    }
+    
+    div
+    {
+        background-color: var(--backgroundColorMain) !important;
+        color: var(--fontColorMain);
+    }
+    a:link, body_alink
+    {
+        color: var(--fontColorLinkMain) !important;
+    }
+    a:visited, body_avisited
+    {
+        color: var(--fontColorLinkMain) !important;
+    }
+    a:hover, a:active, body_ahover
+    {
+        color: var(--fontColorLinkAlt) !important;
+        text-decoration: underline !important;
+    }
+    p, h1, h2, h3, ul
+    {
+        background-color: var(--backgroundColorAlt) !important;
+        color: var(--fontColorMain);     
+    }
+    .flex,
+    {
+        background-color: var(--backgroundColorAlt) !important;
+    }
+    .borderbottomit .kvrcbox {
+        border-bottom: 2px solid var(--backgroundColorAlt);
+    }
+}
